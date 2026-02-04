@@ -3,19 +3,27 @@ FROM maven:3.9.9-eclipse-temurin-21 AS build
 
 WORKDIR /build
 
-COPY pom.xml .
-COPY ../pom.xml ../pom.xml
-RUN mvn dependency:go-offline
+# Copy parent pom
+COPY backend/pom.xml backend/pom.xml
 
-COPY src ./src
-RUN mvn clean package -DskipTests
+# Copy service pom
+COPY backend/product-service/pom.xml backend/product-service/pom.xml
+
+# Download dependencies
+RUN mvn -f backend/product-service/pom.xml dependency:go-offline
+
+# Copy service source
+COPY backend/product-service/src backend/product-service/src
+
+# Build
+RUN mvn -f backend/product-service/pom.xml clean package -DskipTests
 
 # ---------- RUNTIME STAGE ----------
 FROM eclipse-temurin:21-jre
 
-WORKDIR /build/backend/service-name
+WORKDIR /app
 
-COPY --from=build /build/target/*SNAPSHOT.jar app.jar
+COPY --from=build /build/backend/product-service/target/*SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
