@@ -1,0 +1,4 @@
+com\techbook\user\UserServiceApplication.class
+com\techbook\user\service\UserService.class
+com\techbook\user\model\User.class
+com\techbook\user\controller\UserController.class

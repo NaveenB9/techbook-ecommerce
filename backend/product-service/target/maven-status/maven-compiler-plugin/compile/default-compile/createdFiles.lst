@@ -1,0 +1,4 @@
+com\techbook\product\model\Product.class
+com\techbook\product\ProductServiceApplication.class
+com\techbook\product\controller\ProductController.class
+com\techbook\product\service\ProductService.class

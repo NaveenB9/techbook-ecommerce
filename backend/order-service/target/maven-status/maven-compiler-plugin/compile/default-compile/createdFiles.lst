@@ -1,0 +1,4 @@
+com\techbook\order\model\Order.class
+com\techbook\order\OrderServiceApplication.class
+com\techbook\order\controller\OrderController.class
+com\techbook\order\service\OrderService.class

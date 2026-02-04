@@ -1,0 +1,6 @@
+com\techbook\auth\security\JwtUtil.class
+com\techbook\auth\AuthServiceApplication.class
+com\techbook\auth\controller\AuthController.class
+com\techbook\auth\model\AuthRequest.class
+com\techbook\auth\service\AuthService.class
+com\techbook\auth\security\SecurityConfig.class

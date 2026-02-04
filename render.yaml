@@ -3,6 +3,7 @@ services:
     name: discovery-service
     env: docker
     plan: free
+    rootDir: .
     dockerfilePath: backend/discovery-service/Dockerfile
     envVars:
       - key: SPRING_PROFILES_ACTIVE
@@ -12,6 +13,7 @@ services:
     name: api-gateway
     env: docker
     plan: free
+    rootDir: .
     dockerfilePath: backend/api-gateway/Dockerfile
     envVars:
       - key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
@@ -23,6 +25,7 @@ services:
     name: auth-service
     env: docker
     plan: free
+    rootDir: .
     dockerfilePath: backend/auth-service/Dockerfile
     envVars:
       - key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
@@ -32,6 +35,7 @@ services:
     name: user-service
     env: docker
     plan: free
+    rootDir: .
     dockerfilePath: backend/user-service/Dockerfile
     envVars:
       - key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
@@ -41,6 +45,7 @@ services:
     name: product-service
     env: docker
     plan: free
+    rootDir: .
     dockerfilePath: backend/product-service/Dockerfile
     envVars:
       - key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
@@ -50,6 +55,7 @@ services:
     name: order-service
     env: docker
     plan: free
+    rootDir: .
     dockerfilePath: backend/order-service/Dockerfile
     envVars:
       - key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
