@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: discovery-service
+    env: docker
+    plan: free
+    rootDir: .
+    dockerfilePath: backend/discovery-service/Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: docker
