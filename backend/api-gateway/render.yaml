@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: api-gateway
+    env: docker
+    plan: free
+    rootDir: .
+    dockerfilePath: backend/api-gateway/Dockerfile
+    envVars:
+      - key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+        value: https://discovery-service.onrender.com/eureka
+      - key: SPRING_PROFILES_ACTIVE
+        value: docker
